@@ -9,7 +9,16 @@ function onSubmit(form) {
 
     if (result == "100" ){
         form.hidden = true;
+        helloWorld.innerHTML = hello(data.user);
     }
 
     console.log(data, result);
+}
+
+function hello (text){
+    return "Привет, " + text;
+}
+
+if (typeof exports === 'object'){
+    exports.hello = hello;
 }
