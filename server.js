@@ -2,15 +2,26 @@ let express = require('express');
 let technologger = require('technologger');
 let parser = require('body-parser');
 let app = express();
+let db = {};
 
 app.use('/', express.static('public'));
 
 app.use(parser.json());
-app.use(technologger);
+//app.use(technologger);
+
+//TODO REST API
+
+
 
 app.post('/users', (req, res) => {
-    console.log(req.body);
-    res.send('100');
+    email = req.body['email'];
+    db[email] = db[email] ? ++db[email] : 1;
+    someText = req.body['someText'];
+    res.send({
+        number: db[email],
+        someText: someText,
+        email : email
+    });
     // TODO: вернуть количество обращений
 });
 

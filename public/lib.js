@@ -5,5 +5,5 @@ function request(url, data) {
 	xhr.setRequestHeader('Content-Type', 'application/json');
 	xhr.send(JSON.stringify(data));
 	
-	return xhr.responseText;
+	return xhr.response;
 }
