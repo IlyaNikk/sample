@@ -18,5 +18,8 @@ global.window = {
 
 assert.equal(filter('orange'), '******');
 assert.equal(filter('orange sadfsdaf'), '****** sadfsdaf');
+assert.equal(filter(' orange sadfsdaf'), ' ****** sadfsdaf');
 assert.equal(filter('sadfsdaf orange'), 'sadfsdaf ******');
 assert.equal(filter('orangesadfsdaf'), 'orangesadfsdaf');
+assert.equal(filter('asdorangesadfsdaf'), 'asdorangesadfsdaf');
+assert.equal(filter('sadfsdaf orange '), 'sadfsdaf ****** ');

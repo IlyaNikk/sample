@@ -20,7 +20,6 @@ function filter(someText){
     let rules = {
         rules: ['orange', 'apple']
     }
-
     for(let i = 0; i < rules.rules.length; ++i){
         let start = 0;
         while(true) {
@@ -34,7 +33,6 @@ function filter(someText){
             start += (position + 1);
         }
     }
-    console.log(someText);
     return someText;
     // str = str + '';
     // rules = rules.map(function(rule, i, arr) {
@@ -43,7 +41,6 @@ function filter(someText){
     //        length : rule.length
     //    }
     // });
-    //
     // console.dir(rules);
     // str.forEach(function(rule, i, arr) {
     //     str = str.replace(rule.regexp, (new Array(rule.length + 1)).join('*'))
@@ -52,13 +49,12 @@ function filter(someText){
 }
 
 function change(str, position, rule) {
-        if ((str[str.length] < "A" || str[str.length] > "z") || str.length == rule.length + position || position == 0){
-            console.log(str.substring(0, str.position + 1));
-            console.log(str.length);
-            console.log(rule.length + position);
-            console.log(position);
-            str = str.substring(0, str.position + 1) + new Array(rule.length + 1).join('*') + str.substring(position + rule.length);
-        }
+    let number = position + rule.length;
+    let pos = position - 1;
+    if (((str[pos] < "A" || str[pos] > "z") || position == 0 )
+        && ((str[number] < "A" || str[number] > "z") || number == str.length)){
+        str = str.substring(0, position) + new Array(rule.length + 1).join('*') + str.substring(position + rule.length);
+    }
     return str;
 }
 
