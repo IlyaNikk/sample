@@ -26,3 +26,4 @@ assert.equal(filter('sadfsdaf orange '), 'sadfsdaf ****** ');
 assert.equal(filter('asdasd orange asdasd orange asdasd'), 'asdasd ****** asdasd ****** asdasd')
 assert.equal(filter('apple'), '*****');
 assert.equal(filter('урод'), '****');
+assert.equal(filter('sAdfsdAQf OrAngE'), 'sAdfsdAQf ******');
